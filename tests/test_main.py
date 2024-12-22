@@ -11,7 +11,7 @@ def client():
 
 @pytest.fixture(autouse=True)
 def mock_mongo():
-    with patch('src.app.MongoClient') as mock_client:
+    with patch('pymongo.MongoClient') as mock_client:
         # Configure the mock if needed
         mock_db = mock_client.return_value['todo_app']
         mock_users = mock_db['users']
